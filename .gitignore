@@ -18,8 +18,10 @@ forcing_data/
 *.zarr.zip
 
 # Model outputs
+*.nc
 output*/
 outputs/
+sample_ouputs/
 autoregressive_predictions.nc
 autoregressive_target.nc
 initial_condition.nc
