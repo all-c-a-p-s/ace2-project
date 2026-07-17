@@ -1,0 +1,22 @@
+experiment_dir: /output_directory
+n_forward_steps: 400 
+forward_steps_in_memory: 50
+checkpoint_path: /ace2_era5_ckpt.tar
+logging:
+  log_to_screen: true
+  log_to_wandb: false
+  log_to_file: true
+  project: ace
+initial_condition:
+  path: /initial_conditions/ic_2020.nc
+  start_indices:
+    times:
+      - "2020-01-01T00:00:00"
+forcing_loader:
+  dataset:
+    data_path: /forcing_data
+  num_data_workers: 4
+data_writer:
+  save_prediction_files: true
+  save_monthly_files: false
+  names: ["TMP2m", "VGRD10m", "PRATEsfc"]

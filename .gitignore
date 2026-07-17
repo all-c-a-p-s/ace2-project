@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Environments
+.venv/
+venv/
+env/
+.conda/
+
+# Large ACE2 model/data files
+ace2_era5_ckpt.tar
+initial_conditions/
+forcing_data/
+*.zarr/
+*.zarr.zip
+
+# Model outputs
+output*/
+outputs/
+autoregressive_predictions.nc
+autoregressive_target.nc
+initial_condition.nc
+restart.nc
+mean_diagnostics.nc
+time_mean_diagnostics.nc
+annual_diagnostics.nc
+power_spectrum_diagnostics.nc
+
+# Logs
+*.log
+startup_warnings.log
+
+# Editor/OS files
+.DS_Store
+.vscode/
+.idea/
+*.swp
