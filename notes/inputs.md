@@ -27,6 +27,7 @@ Data variables: (12/38)
 ```
 
 12 timesteps, 1 for the first of each month of 2020
+
 All input/output variables
 
 ## Forcing Data
@@ -56,5 +57,19 @@ Data variables: (12/25)
 ```
 
 about 365 * (24 / 6) timesteps
+
 Input-only variables
-(`ak_i` and `bk_i` are just constant coefficients )
+
+`ak_i` and `bk_i` are just constant coefficients defining the pressure levels
+
+`land_fraction` and `HGTsfc` (surface elevation) are also constant
+
+The variables which can actually vary are:
+
+- `surface_temperature`
+- `sea_ice_fraction`
+- `ocean_fraction`
+- `DSWRFtoa` (incoing solar radiation)
+- `global_mean_co2`
+
+

@@ -79,6 +79,7 @@ Data variables: (12/61)
 ```
 
 as for how the indexing works:
+
 for example, `time="2020-01"` will store the mean over all Jan. 2020 timesteps
 
 ## Mean Diagnostics (`mean_diagnostics.nc`)
