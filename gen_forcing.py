@@ -51,12 +51,12 @@ out["surface_temperature"].loc[{"time": valid_times}] = xr.where(
     out["surface_temperature"].sel(time=valid_times),
 )
 
-out = out.drop_vars("valid_time", errors="ignore")
+encoding = {name: {"zlib": True, "complevel": 4} for name in out.data_vars}
 
-out.to_netcdf(
-    OUTPUT,
-    encoding={name: {"zlib": True, "complevel": 4} for name in out.data_vars},
-)
+encoding["time"] = {
+    key: template["time"].encoding[key]
+    for key in ("units", "calendar", "dtype")
+    if key in template["time"].encoding
+}
 
-print(f"Saved {OUTPUT}")
-print(out)
+out.to_netcdf(OUTPUT, encoding=encoding)

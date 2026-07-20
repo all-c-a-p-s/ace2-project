@@ -1,0 +1,27 @@
+experiment_dir: /home/seba/ace2/with_artificial_forcing
+
+n_forward_steps: 360
+forward_steps_in_memory: 1 
+
+checkpoint_path: /home/seba/ace2/ace2_era5_ckpt.tar
+
+logging:
+  log_to_screen: false
+  log_to_wandb: false
+  log_to_file: false
+  project: ace2-test
+
+initial_condition:
+  path: /home/seba/ace2/initial_conditions/ic_2020.nc
+  start_indices:
+    times:
+      - "2020-01-01T00:00:00"
+
+forcing_loader:
+  dataset:
+    data_path: /home/seba/ace2/ecmwf_forcing
+  num_data_workers: 2
+
+data_writer:
+  save_prediction_files: true
+  save_monthly_files: true
